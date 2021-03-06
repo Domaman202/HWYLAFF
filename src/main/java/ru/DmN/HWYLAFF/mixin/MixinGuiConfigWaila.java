@@ -29,7 +29,7 @@ public abstract class MixinGuiConfigWaila extends GuiOptions {
      * @author DomamaN202
      * @reason Fix
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public OptionsListWidget getOptions() {
         MinecraftClient var10003 = this.client;
         int var10004 = this.width + 45;
