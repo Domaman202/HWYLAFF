@@ -35,7 +35,7 @@ public abstract class MixinGuiConfigPlugins extends GuiOptions {
         OptionsListWidget options = new OptionsListWidget(this, var10003, var10004, var10005, 32, var10007, 30, var10009::save);
         PluginConfig.INSTANCE.getNamespaces().forEach((namespace) -> {
             String translationKey = "config.waila.plugin_" + namespace;
-            options.add(new OptionsEntryButton(translationKey, new ButtonWidget(0, 0, 100, 20, new LiteralText(""), (w) -> this.client.openScreen(new Anon1GuiOptions(this, new TranslatableText(translationKey), PluginConfig.INSTANCE.getKeys(namespace), translationKey)))));
+            options.add(new OptionsEntryButton(translationKey, new ButtonWidget(0, 0, 100, 20, new LiteralText(""), (w) -> this.client.currentScreen = new Anon1GuiOptions(this, new TranslatableText(translationKey), PluginConfig.INSTANCE.getKeys(namespace), translationKey))));
         });
         return options;
     }
