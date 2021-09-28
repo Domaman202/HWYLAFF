@@ -41,17 +41,4 @@ public class Anon3GuiOptions extends GuiOptions {
         }))));
         return options;
     }
-
-    public static class Anon3GuiOptions$1 extends GuiOptions {
-        Anon3GuiOptions$1(Screen x0, Text x1) {
-            super(x0, x1);
-        }
-
-        public OptionsListWidget getOptions() {
-            OptionsListWidget options = new OptionsListWidget(this, this.client, this.width + 45, this.height, 32, this.height - 32, 30);
-            options.add(new OptionsEntryValueInput(Util.createTranslationKey("config", new Identifier("waila", "overlay_alpha")), Waila.CONFIG.get().getOverlay().getColor().getRawAlpha(), val -> Waila.CONFIG.get().getOverlay().getColor().setAlpha((int)Math.min(100.0, Math.max(0.0, (Double)val))), OptionsEntryValueInput.INTEGER));
-            options.add(new OptionsEntryValueCycle(Util.createTranslationKey("config", new Identifier("waila", "overlay_theme")), Waila.CONFIG.get().getOverlay().getColor().getThemes().stream().map(t -> t.getId().toString()).sorted(String::compareToIgnoreCase).toArray(String[]::new), Waila.CONFIG.get().getOverlay().getColor().getTheme().getId().toString(), val -> Waila.CONFIG.get().getOverlay().getColor().applyTheme(new Identifier(val))));
-            return options;
-        }
-    }
 }
